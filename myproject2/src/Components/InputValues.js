@@ -9,10 +9,17 @@ function InputValues() {
   
 
 const Handler=(e)=>{
-   setFirst(document.getElementById('fname').value)
-    setLast(document.getElementById('lname').value)
-   setPhone(document.getElementById('phone').value)
-};
+  setFirst(e.target.value)
+}
+
+const Handler1=(e)=>{
+  setLast(e.target.value)
+}
+
+
+const Handler2=(e)=>{
+  setPhone(e.target.value)
+}
   
   
 
@@ -21,17 +28,17 @@ const Handler=(e)=>{
      <form>
      <label for="fname">First name:</label>
      <br></br>
-     <input type="text" id="fname" name="fname" />
+     <input type="text" id="fname" name="fname" onChange={Handler} />
      <br></br>
      <label for="lname">Last name:</label>
      <br></br>
-    <input type="text" id="lname" name="lname"  />
+    <input type="text" id="lname" name="lname" onChange={Handler1} />
     <br></br>
     <label for ="phone">PhoneNumber:</label>
     <br/>
-    <input type="text" id="phone" name="number" />
+    <input type="text" id="phone" name="number" onChange={Handler2}/>
     <br></br>
-    <button onClick={Handler}>Click Me</button>
+    <button>Click Me</button>
    </form>
    <div>
      <Display first={first}/>
